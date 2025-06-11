@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+body{
+    margin: 0;
+    font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+body * {
+   box-sizing: border-box;
+}
+
+.main-login{ /* lembrando q tudo q ta dentro dessas chavinhas tá são as configs da div q foi citada (main-login)*/
+    width: 100vw;/*widht= largura; vw=porcentagem da largura q essa div vai usar do seu site*/
+    min-height: 100vh;/*height= altura; vh=porcentagem da altura q essa div vai usar do seu site*/
+    background: #201b2c;/*plano de fundo do site*/
+    display: flex;/*junta as informações do site lado a lado*/
+    justify-content: center;
+    /*serve para organizar na horizontal(eixo x) os conteúdos de uma página 
+    1. justify-content: flex-start (padrão)
+   [ITEM][ITEM][ITEM]_____________
+
+2. justify-content: flex-end
+   _____________[ITEM][ITEM][ITEM]
+
+3. justify-content: center
+   ______[ITEM][ITEM][ITEM]______
+
+4. justify-content: space-between
+   [ITEM]______[ITEM]______[ITEM]
+
+5. justify-content: space-around
+   __[ITEM]__[ITEM]__[ITEM]__
+
+6. justify-content: space-evenly
+   _[ITEM]_[ITEM]_[ITEM]_*/
+   align-items: center;
+   /* serve para organizar na vertical (eixo y) os conteúdos de uma página
+   1. align-items: stretch (padrão)
+   _________________
+   |[ITEM]         |
+   |[ITEM]         |
+   |[ITEM]         |
+   -----------------
+
+2. align-items: flex-start
+   _________________
+   |[ITEM]          |
+   |[ITEM]          |
+   |[ITEM]          |
+   -----------------
+
+3. align-items: flex-end
+   _________________
+   |         [ITEM]|
+   |         [ITEM]|
+   |         [ITEM]|
+   -----------------
+
+4. align-items: center
+   _________________
+   |    [ITEM]     |
+   |    [ITEM]     |
+   |    [ITEM]     |
+   -----------------
+
+5. align-items: baseline
+   _________________
+   |[ITEM] (baseline alinhada)
+   |   [ITEM]      |
+   |      [ITEM]   |
+   -----------------
+   */
+    }
+
+.left-login{
+    width: 50%;
+    height: auto;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;/*para o conteúdo da div ser organizado um embaixo do outro*/
+}
+.left-login > h1{/*para chamar elementos dentro da div basta colocar > e o nome do elemento(h1) a ser configurado*/ 
+   color: #77ffc0;
+   flex-direction: column;
+}
+.left-login-img{
+   width: 35vw;
+}
+
+.right-login{
+   width: 50vw;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.card-login{
+ width: 60%;  /* aq escreveu % invés de vw, pq aq é a porcentagem q essa div vai ocupar dentro da 
+ div q ela está(righ-login) e não a porcentagem na página toda*/
+ justify-content: center;
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ padding: 30px 25px; /*no padding vc monta um quadrado e dentro desse quadrado vão ter as suas informações
+ o primeiro número do padding refere se a grossura das linhas verticais, enquanto o segundo é a grossura
+ das linhas horizontais*/
+ background: #2f2841;
+ border-radius: 20px;/*pra deixar as bordinha do card arredondada*/
+ box-shadow: 0px 10px 40px #00000080; /*primeiro valor é se vc quer q a sombra seja projetada de um lado para o outro
+ o segundo é se vc quer q ela seja projetada de cima pra baixo(valor positivo) ou de baixo pra cima(valor negativo)
+ o terceiro é sobre o tamanho da sombra*/
+}
+.card-login > h1{
+   color: #00ff88;
+   font-weight: 800;
+   margin:0 15;
+}
+.textfield{
+   display: flex;
+   width: 100%;
+   flex-direction: column; /*flex direction inverte a função do align e justify*/
+   align-items: center; /*vai mexer no eixo x*/
+   justify-content: center;/*vai mexer no eixo y*/ 
+    
+   
+}
+
+.textfield > input{
+   width: 80%;
+   height: none;
+   border:none;
+   border-radius: 15px;
+   padding: 15px;
+   background:#514869 ;
+   color:#f0ffffde;
+   font-size:12pt;
+   box-shadow: 0px 10px 40px #00000080;
+   outline:none; /*outline=linha de fora, no comando ao lado foram tirados essas linhas q ficam de fora do quadradin de input*/
+   box-sizing: border-box;
+   margin: 5% 0%;
+   text-align: center;
+}
+.textfield > label{
+   color:#f0ffffde;
+   margin-bottom: -15px;
+}
+.textfield > input::placeholder{
+   color:#f0ffff94;
+   text-align: center;
+}
+.botao-login{
+   width: 30%;
+   padding: 16px 0px;
+   margin: 25px;
+   border: none;
+   border-radius: 100px;
+   outline: none;
+   text-transform: uppercase;
+   font-weight: 800;
+   letter-spacing: 3px;
+   color:#2b134b;
+   background:#00ff88;
+   cursor:pointer;
+   box-shadow: 0px 10px 40px -5px #00ff8052;
+   transition: background-color 0.3s;
+}
+.botao-login:hover{
+   color: #00ff88;
+   background-color: #2b134b;
+}
+
+@media only screen and (max-width: 950px){
+   .card-login{
+       width: 85%;
+   }
+}
+
+@media only screen and (max-width: 600px){
+   .main-login{
+      flex-direction: column;
+   }
+   .left-login > h1{
+      display: none;
+   }
+   .left-login{
+      width: 100%;
+      height: auto;
+   }
+   .right-login{
+      width:100%;
+      height: auto;
+   }
+   .left-login-img{
+      width: 50vw;
+   }
+   .card-login{
+      width: 90%;
+   }
+}
